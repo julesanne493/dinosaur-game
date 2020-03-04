@@ -1,0 +1,33 @@
+img{
+    height: 65px;
+}
+
+.dinosaur{
+    margin: 10px;
+    margin-left: 15px;
+    padding: 10px;
+    border: solid;
+    border-color: pink;
+    border-width: 4px 4px 4px 4px;
+    width: 160px;
+    text-align: center;
+    display: inline-block;
+}
+
+.fighter {
+    margin: 10px;
+    padding: 10px;
+    border: solid;
+    border-color: blue;
+    border-width: 4px 4px 4px 4px;
+    width: 160px;
+}
+
+.enemy {
+    padding: 10px;
+    border: solid;
+    border-color: purple;
+    border-width: 4px 4px 4px 4px;
+    width: 160px;
+    margin: 10px;
+}

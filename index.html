@@ -3,9 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crystal Guess</title>
+    <title>Dinosaur Wars!</title>
+
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <script src="https://code.jquery.com/jquery.js"></script>
+
+
 </head>
 <body>
+
+    <h1>Dinosaur Wars!!</h1>
+
+    <h2>To start the game, select the dinosaur you want to fight with. Then select the dinosaur you want to battle. Each time you attack the enemy dinosaur, you will receive damage, but your attacking power will increase. See if you can defeat all the enemy dinosaurs!</h2>
+<div class="wrap">
+    <div class="dinosaurs-to-choose"></div>
+
+    <div id="fighter">My Dinosaur: </div>
+
+    <div id="enemy">Enemy: </div>
+
+    <div id="game-stats"></div>
+    <button id="attack">Attack!</button>
+
+    <button id="reset">Reset</button>
+
+    <div id="enemies">Defeated: </div>
+</div>
+
+    
+    <script src="assets/javascript/game.js"></script>
+
     
 </body>
 </html>
