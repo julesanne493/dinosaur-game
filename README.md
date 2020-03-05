@@ -1,1 +1,1 @@
-# crystal-guess
+# dinosaur-game
