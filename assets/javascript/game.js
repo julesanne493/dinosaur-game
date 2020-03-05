@@ -123,7 +123,8 @@ $("#attack").on("click", function(){
         $("#enemies").append(enemyDinosaur);
         $(enemyDinosaur).attr("class", "enemies");
         enemy = 0;
-        $("#enemy-health").text("");
+        $("#fighter-health").text("Fighter's health: ");
+        $("#enemy-health").text("Enemy's health: ");
     };
 }
     
