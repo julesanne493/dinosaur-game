@@ -1,32 +1,105 @@
+body {
+    background-image: url(../images/background.png);
+    font-family: 'Kanit', sans-serif;
+    text-align: center;
+}
+
+h1 {
+    background-color: white;
+    font-family: 'Miltonian Tattoo', cursive;
+    font-size: 60px;
+    width: 25%;
+    margin: 0 auto;
+    margin-top: 15px;
+    border-color: black;
+    border: solid;
+    border-width: 2px 2px 2px 2px;
+}
+
+h2 {
+    background-color: white;
+    font-size: 20px;
+    margin: 15px;
+    padding: 5px;
+    border-color: black;
+    border: solid;
+    border-width: 2px 2px 2px 2px;
+}
+
+#fighter-health, #enemy-health, #fighter-dinosaur, #enemy-dinosaur, #defeated {
+    background-color: white;
+    font-size: 20px;
+    margin: 0 auto;
+    margin-top: 10px;
+    width: 12%;
+    padding: 10px;
+    font-weight: bold;
+    border: solid;
+    border-color: darkgreen;
+    border-width: 2px 2px 2px 2px;
+}
+
+#defeated {
+    margin-bottom: 20px;
+}
+
+button {
+    background-color: lightsalmon;
+    font-size: 20px;
+    margin: 10px;
+    border-color: white;
+    border: 4px 4px 4px 4px;
+    padding: 5px 10px 5px 10px;
+}
+
 img{
     height: 65px;
+    margin: 5px;
 }
 
 .dinosaur{
+    background-color: beige;
     margin: 10px;
     margin-left: 15px;
-    padding: 10px;
     border: solid;
     border-color: pink;
     border-width: 4px 4px 4px 4px;
-    width: 160px;
-    text-align: center;
+    width: 180px;
     display: inline-block;
+    text-align: center;
+    font-weight: bold;
 }
 
 .fighter {
+    background-color: beige;
     margin: 10px;
     padding: 10px;
     border: solid;
     border-color: blue;
     border-width: 4px 4px 4px 4px;
-    width: 160px;
+    width: 180px;
+    display: inline-block;
+    text-align: center;
 }
 
 .enemy {
+    background-color: beige;
     padding: 10px;
     border: solid;
     border-color: purple;
+    border-width: 4px 4px 4px 4px;
+    width: 180px;
+    margin: 10px;
+    display: inline-block;
+    text-align: center;
+}
+
+.enemies {
+    background-color: beige;
+    display: inline-block;
+    padding: 10px;
+    border: solid;
+    border-color: cyan;
     border-width: 4px 4px 4px 4px;
     width: 160px;
     margin: 10px;

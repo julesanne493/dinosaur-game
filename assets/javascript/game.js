@@ -10,7 +10,7 @@ var dinosaurs = [
     {
         "Name": "Triceratops",
         "HP": 10,
-        "HP Rate": 5,
+        "HP Rate": 1.5,
         "Health": 130,
         "Image": src="assets/images/triceratops.jpg"
     },
@@ -24,7 +24,7 @@ var dinosaurs = [
     {
         "Name": "Stegosaurus",
         "HP": 75,
-        "HP Rate": 5,
+        "HP Rate": 1.25,
         "Health": 150,
         "Image": src="assets/images/stegosaurus.jpeg"
     },
@@ -38,13 +38,12 @@ var dinosaurs = [
     {
         "Name": "Mamenchisaurus",
         "HP": 40,
-        "HP Rate": 3,
+        "HP Rate": 1.8,
         "Health": 145,
         "Image": src="assets/images/mamenchisaurus.jpg"
     }
 ];
 for (var i=0; i<dinosaurs.length; i++) {
-
         var newDinosaur = $("<div></div>")
         $(newDinosaur).attr("HP", dinosaurs[i]["HP"]);
         $(newDinosaur).attr("HP-rate", dinosaurs[i]["HP Rate"]);
@@ -52,23 +51,17 @@ for (var i=0; i<dinosaurs.length; i++) {
         $(newDinosaur).attr("class", "dinosaur");
         var newDinosaurImg = $("<img>");
         $(newDinosaurImg).attr("src", dinosaurs[i]["Image"]);
-
         var newDinoName = dinosaurs[i]["Name"];
         var dinoNameText = $("<p></p>");
         $(dinoNameText).text(newDinoName);
-
         var newDinoHealth = "Health: " + dinosaurs[i]["Health"];
         var dinoHealthText = $("<p></p>");
         $(dinoHealthText).text(newDinoHealth);
-
         $(newDinosaur).append(dinoNameText);
         $(newDinosaur).append(newDinosaurImg);
         $(newDinosaur).append(dinoHealthText);
-
         $(".dinosaurs-to-choose").append(newDinosaur);
-
 };
-
 var fighter = 0;
 var enemy = 0;
 
@@ -93,7 +86,7 @@ $(".dinosaur").on("click", function (){
     fighterHPRate=$(".fighter").attr("HP-rate");
     }
 
-    else if (enemy<1){
+    else if (enemy<1 && ($(this).attr("class")!="enemy") && ($(this).attr("class")!="fighter")){
         ($(this).attr("class", "enemy"));
         $("#enemy").append($(this));
 
@@ -106,37 +99,41 @@ $(".dinosaur").on("click", function (){
 });
 
 var fights = 0;
+var lost = 0;
 
 $("#attack").on("click", function(){
-    if (fighter>0 && enemy>0){
-        console.log("Fights: "+ fights);
+    if (fighter>0 && enemy>0 && fighterHealth>0){
         fighterHealth = fighterHealth - enemyHP;
-        console.log("Fighter health: " + fighterHealth);
         enemyHealth = enemyHealth - fighterHP;
-        console.log("Enemy health: " + enemyHealth);
-
-        console.log("Fighter HP: " + fighterHP);
-        console.log("Fighter HP Rate: " + fighterHPRate);
+        $("#fighter-health").text("Fighter's health: " + fighterHealth);
+        $("#enemy-health").text("Enemy's health: " + enemyHealth);
         fighterHP = fighterHP*fighterHPRate;
-        console.log("Fighter HP: " + fighterHP);
         fights++;
     };
 
-    if (fights>0 && fighterHealth<1){
-        alert("you lose");
-    }
+    if (fights>0 && fighterHealth<1 && lost<1){
+        $("#game-stats").append($("<div> Sorry, you lost. Click 'Reset' below to try again!</div>"));
+        $("#fighter-health").text("");
+        $("#enemy-health").text("");
+        lost++;
+        return;
+    };
 
     if(fights>0 && enemyHealth<1){
-        alert("you win!");
-
         $("#enemies").append(enemyDinosaur);
-    }
-
+        $(enemyDinosaur).attr("class", "enemies");
+        enemy = 0;
+        $("#enemy-health").text("");
+    };
 }
     
 );
 
-var HP = ($(this).attr("HP"));
+$("#reset").on("click", function (){
+    location.reload();
+})
+
+
 
 
 

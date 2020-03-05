@@ -10,6 +10,7 @@
 
     <script src="https://code.jquery.com/jquery.js"></script>
 
+    <link href="https://fonts.googleapis.com/css?family=Kanit:300|Miltonian+Tattoo&display=swap" rel="stylesheet">
 
 </head>
 <body>
@@ -17,20 +18,27 @@
     <h1>Dinosaur Wars!!</h1>
 
     <h2>To start the game, select the dinosaur you want to fight with. Then select the dinosaur you want to battle. Each time you attack the enemy dinosaur, you will receive damage, but your attacking power will increase. See if you can defeat all the enemy dinosaurs!</h2>
-<div class="wrap">
+
     <div class="dinosaurs-to-choose"></div>
 
-    <div id="fighter">My Dinosaur: </div>
+    <div id="fighter">
+        <p id="fighter-dinosaur">My Dinosaur: </p>
+    </div>
 
-    <div id="enemy">Enemy: </div>
+    <div id="enemy">
+        <p id="enemy-dinosaur">Enemy Dinosaur: </p>
+    </div>
 
-    <div id="game-stats"></div>
+    <div id="game-stats">
+        <div id="fighter-health">Fighter health: </div>
+        <div id="enemy-health">Enemy health: </div>
+    </div>
     <button id="attack">Attack!</button>
-
+    <br>
     <button id="reset">Reset</button>
 
-    <div id="enemies">Defeated: </div>
-</div>
+    <div id="defeated">Defeated:</div>
+    <div id="enemies"></div>
 
     
     <script src="assets/javascript/game.js"></script>
