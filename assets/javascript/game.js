@@ -113,8 +113,8 @@ $("#attack").on("click", function(){
 
     if (fights>0 && fighterHealth<1 && lost<1){
         $("#game-stats").append($("<div> Sorry, you lost. Click 'Reset' below to try again!</div>"));
-        $("#fighter-health").text("");
-        $("#enemy-health").text("");
+        $("#fighter-health").text("Fighter's health: ");
+        $("#enemy-health").text("Enemy's health: ");
         lost++;
         return;
     };
