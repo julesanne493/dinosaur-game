@@ -48,6 +48,7 @@ for (var i=0; i<dinosaurs.length; i++) {
         $(newDinosaur).attr("HP", dinosaurs[i]["HP"]);
         $(newDinosaur).attr("HP-rate", dinosaurs[i]["HP Rate"]);
         $(newDinosaur).attr("Health", dinosaurs[i]["Health"]);
+        $(newDinosaur).attr("Name", dinosaurs[i]["Name"]);
         $(newDinosaur).attr("class", "dinosaur");
         var newDinosaurImg = $("<img>");
         $(newDinosaurImg).attr("src", dinosaurs[i]["Image"]);
@@ -56,6 +57,7 @@ for (var i=0; i<dinosaurs.length; i++) {
         $(dinoNameText).text(newDinoName);
         var newDinoHealth = "Health: " + dinosaurs[i]["Health"];
         var dinoHealthText = $("<p></p>");
+        dinoHealthText.attr("id", dinosaurs[i]["Name"] + "-health");
         $(dinoHealthText).text(newDinoHealth);
         $(newDinosaur).append(dinoNameText);
         $(newDinosaur).append(newDinosaurImg);
@@ -69,8 +71,8 @@ var fighterHP =0;
 var fighterHealth =0;
 var fighterHPRate =0;
 
-var enemyHP =0;
-var enemyHealth =0;
+var enemyHP = 0;
+var enemyHealth = 0;
 
 var enemyDinosaur;
 
@@ -80,6 +82,8 @@ $(".dinosaur").on("click", function (){
     {($(this).attr("class", "fighter"));
     $("#fighter").append($(this));
     fighter++;
+
+    fighterDinosaur = $(this);
 
     fighterHP = $(".fighter").attr("HP");
     fighterHealth = $(".fighter").attr("health");
@@ -105,10 +109,20 @@ $("#attack").on("click", function(){
     if (fighter>0 && enemy>0 && fighterHealth>0){
         fighterHealth = fighterHealth - enemyHP;
         enemyHealth = enemyHealth - fighterHP;
-        $("#fighter-health").text("Fighter's health: " + fighterHealth);
-        $("#enemy-health").text("Enemy's health: " + enemyHealth);
         fighterHP = fighterHP*fighterHPRate;
         fights++;
+
+        var fighterDinoName = $(fighterDinosaur).attr("name");
+
+        var fighterDinoHealth = "#" + fighterDinoName + "-health";
+
+        $(fighterDinoHealth).text("Health: " + fighterHealth);
+
+        var enemyDinoName = $(enemyDinosaur).attr("name");
+
+        var enemyDinoHealth = "#" + enemyDinoName + "-health";
+
+        $(enemyDinoHealth).text("Health: " + enemyHealth);
     };
 
     if (fights>0 && fighterHealth<1 && lost<1){
