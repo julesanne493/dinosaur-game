@@ -15,7 +15,7 @@ var dinosaurs = [
         "Image": src="assets/images/triceratops.jpg"
     },
     {
-        "Name": "Tyrannosaurus Rex",
+        "Name": "Tyrannosaurus-Rex",
         "HP": 50,
         "HP Rate": 4,
         "Health": 200,
@@ -121,6 +121,8 @@ $("#attack").on("click", function(){
         var enemyDinoName = $(enemyDinosaur).attr("name");
 
         var enemyDinoHealth = "#" + enemyDinoName + "-health";
+
+        console.log(enemyDinoHealth);
 
         $(enemyDinoHealth).text("Health: " + enemyHealth);
     };
